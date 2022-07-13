@@ -1,0 +1,51 @@
+/*We can style specific items using their ID (#id) or entire classes (.ClassName)(lowercase)*/
+
+.button{
+	-fx-background-color:white;
+	-fx-border-color: #000000; 
+	-fx-border-width: 1 1 1 1;
+	-fx-margin-top:20px;
+}
+
+.button:hover {
+	-fx-background-color: #4CAF50; /* Green */
+	-fx-color: white;
+  }
+
+  #addCoinButton {
+	-fx-background-color:#ff4343;
+	-fx-color: white;
+  }
+  #removeCoinButton {
+	-fx-background-color:#ff4343;
+	-fx-color: white;
+  }
+  #statisticsButton {
+	-fx-background-color:#ff4343;
+	-fx-color: white;
+  }
+
+#totalNumberOfCoinsLabel{
+	-fx-font-family: sans-serif;
+	-fx-margin:20px;
+	-fx-font-size: 25px;
+	-fx-background-color: #4caf50;
+}
+#maxNumberOfCoinsCountryLabel{
+	-fx-font-family: sans-serif;
+	-fx-margin:20px;
+	-fx-font-size: 25px;
+	-fx-background-color: #2196f3;
+}
+#maxCountryTotalValueLabel{
+	-fx-font-family: sans-serif;
+	-fx-margin:20px;
+	-fx-font-size: 25px;
+	-fx-background-color: #ff9800;
+}
+#totalCollectionValueLabel{
+	-fx-font-family: sans-serif;
+	-fx-margin:20px;
+	-fx-font-size: 25px;
+	-fx-background-color: #f44336;
+}

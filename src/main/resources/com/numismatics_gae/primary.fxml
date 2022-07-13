@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="962.0" prefWidth="1494.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.numismatics_gae.PrimaryController">
+  <children>
+    <MenuBar prefWidth="1250.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem id="newMenuItem" fx:id="newCollectionMenuItem" mnemonicParsing="false" onAction="#newCollection" text="New" />
+            <MenuItem fx:id="openCollectionMenuItem" mnemonicParsing="false" onAction="#openCollection" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem fx:id="saveFileMenuItem" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About Numismatics" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane fx:id="leftAnchorPane" visible="false">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="29.0" prefWidth="347.0">
+                           <children>
+                              <Label fx:id="currentCollectionLabel" prefHeight="21.0" prefWidth="368.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="121.0">
+                           <children>
+                              <Button fx:id="addCoinButton" mnemonicParsing="false" onAction="#editCoin" text="Add Coin" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="121.0">
+                           <children>
+                              <Button fx:id="removeCoinButton" mnemonicParsing="false" onAction="#editCoin" text="Remove Coin" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="andorraButton" mnemonicParsing="false" onAction="#changeCountry" prefHeight="31.0" prefWidth="121.0" text="Andorra" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="austriaButton" mnemonicParsing="false" onAction="#changeCountry" text="Austria" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="belgiumButton" mnemonicParsing="false" onAction="#changeCountry" text="Belgium" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="cyprusButton" mnemonicParsing="false" onAction="#changeCountry" text="Cyprus" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="estoniaButton" mnemonicParsing="false" onAction="#changeCountry" text="Estonia" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="finlandButton" mnemonicParsing="false" onAction="#changeCountry" text="Finland" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="franceButton" mnemonicParsing="false" onAction="#changeCountry" text="France" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="germanyButton" mnemonicParsing="false" onAction="#changeCountry" text="Germany" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="greeceButton" mnemonicParsing="false" onAction="#changeCountry" text="Greece" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="irelandButton" mnemonicParsing="false" onAction="#changeCountry" text="Ireland" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="italyButton" mnemonicParsing="false" onAction="#changeCountry" text="Italy" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="latviaButton" mnemonicParsing="false" onAction="#changeCountry" text="Latvia" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="lithuaniaButton" mnemonicParsing="false" onAction="#changeCountry" text="Lithuania" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="luxembourgButton" mnemonicParsing="false" onAction="#changeCountry" text="Luxembourg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="maltaButton" mnemonicParsing="false" onAction="#changeCountry" text="Malta" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="monacoButton" mnemonicParsing="false" onAction="#changeCountry" text="Monaco" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="netherlandsButton" mnemonicParsing="false" onAction="#changeCountry" text="Netherlands" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="portugalButton" mnemonicParsing="false" onAction="#changeCountry" text="Portugal" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="sanMarinoButton" mnemonicParsing="false" onAction="#changeCountry" text="San Marino" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="slovakiaButton" mnemonicParsing="false" onAction="#changeCountry" text="Slovakia" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="sloveniaButton" mnemonicParsing="false" onAction="#changeCountry" text="Slovenia" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="spainButton" mnemonicParsing="false" onAction="#changeCountry" text="Spain" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="vaticanCityButton" mnemonicParsing="false" onAction="#changeCountry" text="Vatican City" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="20.0" prefWidth="221.0">
+                           <children>
+                              <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="31.0" prefWidth="121.0" text="Statistics" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+        </AnchorPane>
+        <ScrollPane prefHeight="906.0" prefWidth="638.0">
+          <content>
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="884.0" prefWidth="674.0">
+                     <children>
+                        <TableView fx:id="serieTableView" prefHeight="884.0" prefWidth="675.0">
+                          <columns>
+                              <TableColumn fx:id="yearTableColumn" prefWidth="75.0" text="Year" />
+                            <TableColumn fx:id="oneCentTableColumn" prefWidth="75.0" text="0.01 €" />
+                              <TableColumn fx:id="twoCentTableColumn" prefWidth="75.0" text="0.02 €" />
+                              <TableColumn fx:id="fiveCentTableColumn" prefWidth="75.0" text="0.05 €" />
+                              <TableColumn fx:id="tenCentTableColumn" prefWidth="75.0" text="0.1 €" />
+                              <TableColumn fx:id="twentyCentTableColumn" prefWidth="75.0" text="0.2 €" />
+                              <TableColumn fx:id="fiftyCentTableColumn" prefWidth="75.0" text="0.5 €" />
+                              <TableColumn fx:id="oneEuroTableColumn" prefWidth="75.0" text="1 €" />
+                              <TableColumn fx:id="twoEuroTableColumn" prefWidth="75.0" text="2 €" />
+                          </columns>
+                        </TableView>
+                     </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+        <AnchorPane fx:id="rightAnchorPane" prefHeight="906.0" prefWidth="455.0" visible="false">
+          <children>
+                  <VBox prefHeight="288.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fx:id="flagImageView" fitHeight="195.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/Andorra.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label fx:id="countryData1Label" maxWidth="1.7976931348623157E308" text="Adopted Euro in :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="countryData2Label" maxWidth="1.7976931348623157E308" text="Pre-Euro currency :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="countryData3Label" maxWidth="1.7976931348623157E308" text="Population (2019) :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="countryData4Label" text="ISO Code :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" prefWidth="1102.0" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
